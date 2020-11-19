@@ -1,0 +1,86 @@
+{
+    "license": "MIT", 
+    "name": "lvgl", 
+    "repository": {
+        "url": "https://github.com/lvgl/lvgl.git", 
+        "type": "git"
+    }, 
+    "platforms": [
+        "asrmicro650x", 
+        "atmelavr", 
+        "atmelmegaavr", 
+        "atmelsam", 
+        "espressif32", 
+        "espressif8266", 
+        "freescalekinetis", 
+        "gd32v", 
+        "infineonxmc", 
+        "intel_arc32", 
+        "kendryte210", 
+        "linux_arm", 
+        "maxim32", 
+        "microchippic32", 
+        "nordicnrf51", 
+        "nordicnrf52", 
+        "nuclei", 
+        "nxpimxrt", 
+        "nxplpc", 
+        "riscv_gap", 
+        "shakti", 
+        "sifive", 
+        "siliconlabsefm32", 
+        "ststm32", 
+        "ststm8", 
+        "teensy", 
+        "timsp430", 
+        "titiva", 
+        "wiznet7500"
+    ], 
+    "frameworks": [
+        "arduino", 
+        "cmsis", 
+        "DELETED", 
+        "esp8266-nonos-sdk", 
+        "esp8266-rtos-sdk", 
+        "espidf", 
+        "freedom-e-sdk", 
+        "freertos", 
+        "gd32vf103-sdk", 
+        "kendryte-freertos-sdk", 
+        "kendryte-standalone-sdk", 
+        "libopencm3", 
+        "mbed", 
+        "nuclei-sdk", 
+        "pulp-os", 
+        "pumbaa", 
+        "shakti-sdk", 
+        "simba", 
+        "spl", 
+        "stm32cube", 
+        "tizenrt", 
+        "wiringpi", 
+        "zephyr"
+    ], 
+    "version": "7.1.0", 
+    "build": {
+        "includeDir": "."
+    }, 
+    "authors": [
+        {
+            "maintainer": false, 
+            "name": "LVGL", 
+            "url": "https://github.com/lvgl", 
+            "email": "lvgl@lvgl.io"
+        }
+    ], 
+    "keywords": [
+        "tft", 
+        "gui", 
+        "lvgl", 
+        "embedded", 
+        "graphics"
+    ], 
+    "homepage": "https://lvgl.io", 
+    "id": 6598, 
+    "description": "Graphics library to create embedded GUI with easy-to-use graphical elements, beautiful visual effects and low memory footprint. It offers anti-aliasing, opacity, and animations using only one frame buffer."
+}
