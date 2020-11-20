@@ -62,7 +62,7 @@ void ili9341_flush(lv_disp_drv_t *drv, const lv_area_t *area, const lv_color_t *
     ILI9341_Write_Command(ILI9341_RAMWR);
     for (y = act_y1; y <= act_y2; y++)
     {
-        ILI9341_Write_Array((uint8_t *)color_p, len);        
+        ILI9341_Write_Array((uint8_t *)color_p, len);
         color_p += w;
     }
 
@@ -80,50 +80,19 @@ lv_obj_t *img1;
 void lv_ex_btn_1(void)
 {
 
-
-    /** Images **/
-    img1 = lv_img_create(lv_scr_act(), NULL);
-    lv_img_set_src(img1, &COR1);
-    lv_obj_align(img1, NULL, LV_ALIGN_CENTER, 75, -60);    
-
-    // LV_IMG_DECLARE(logo2_bmp);
-    // LV_IMG_DECLARE(logo3_bmp);
-
-    /* create label */
-    label_hr = lv_label_create(lv_scr_act(), NULL);
-    lv_style_init(&style);
-    lv_style_set_text_font(&style, LV_STATE_DEFAULT, &lv_font_montserrat_40);
-    // lv_style_set_bg_color(&style, LV_STATE_DEFAULT, LV_COLOR_YELLOW);
-    // lv_style_set_(&style, LV_STATE_DEFAULT, LV_COLOR_YELLOW);;
-    lv_style_set_text_color(&style, LV_STATE_DEFAULT, LV_COLOR_RED);
-    // lv_style_set_text_color(&style, LV_STATE_DEFAULT, LV_COLOR_BLUE);
-
-    lv_obj_add_style(label_hr, LV_OBJ_PART_MAIN, &style);
-    lv_obj_align(label_hr, NULL, LV_ALIGN_IN_RIGHT_MID, 15, -85);
-    static lv_style_t style1; /*Declare a new style. Should be static`*/
-    lv_obj_set_size(label_hr, 100, 70);
-
-    lv_obj_t *label = lv_label_create(lv_scr_act(), NULL);
-    lv_obj_align(label, NULL, LV_ALIGN_IN_RIGHT_MID, -65, -90);
-    lv_label_set_text(label, "HR");
-    lv_obj_set_height(label, 100);
-
-    // lv_label_set_align(label_hr, LV_LABEL_ALIGN_LEFT); /*Center aligned lines*/
-
+    /** container graph **/
+    lv_obj_t *cont_graph = lv_cont_create(lv_scr_act(), NULL);
+    // lv_style_set_bg_color(&style_bg_scr, LV_STATE_DEFAULT, color_bg);    
+    lv_obj_set_size(cont_graph, 240, 150);
+    lv_obj_align(cont_graph, NULL, LV_ALIGN_IN_LEFT_MID, 0, 0);
     /*Create a chart*/
-    chart = lv_chart_create(lv_scr_act(), NULL);
-    lv_obj_set_size(chart, 220, 100);
-    lv_obj_align(chart, NULL, LV_ALIGN_IN_LEFT_MID, 0, -50);
+    chart = lv_chart_create(cont_graph, NULL);
+    lv_obj_set_size(chart, 240, 150);
+    lv_obj_align(chart, NULL, LV_ALIGN_CENTER, 0, 0);
     lv_chart_set_type(chart, LV_CHART_TYPE_LINE); /*Show lines and points too*/
     lv_chart_set_point_count(chart, TAMANHO_AMOSTRAS_DMA * 4);
     lv_chart_set_range(chart, 0, 50);
 
-
-
-    // lv_obj_set_style_local_border_opa(chart, LV_CHART_PART_BG, LV_STATE_DEFAULT, LV_OPA_TRANSP);
-    // lv_obj_set_style_local_pad_all(chart, LV_CHART_PART_BG, LV_STATE_DEFAULT, 0);
-    // lv_obj_set_style_local_bg_opa(chart, LV_CHART_PART_SERIES_BG, LV_STATE_DEFAULT, LV_OPA_TRANSP);
-    // lv_obj_set_style_local_bg_color(chart, LV_CHART_PART_BG, LV_STATE_DEFAULT, LV_COLOR_CYAN);
     lv_obj_set_style_local_line_width(chart, LV_CHART_PART_SERIES, LV_STATE_DEFAULT, 2);
     lv_obj_set_style_local_size(chart, LV_CHART_PART_SERIES, LV_STATE_DEFAULT, 0); /*radius of points*/
 
@@ -132,6 +101,41 @@ void lv_ex_btn_1(void)
     ser2 = lv_chart_add_series(chart, LV_COLOR_WHITE);
     lv_chart_set_update_mode(chart, LV_CHART_UPDATE_MODE_CIRCULAR);
     lv_chart_refresh(chart); /*Required after direct set*/
+
+    /** container bpm **/
+    lv_obj_t *cont_bpm = lv_cont_create(lv_scr_act(), NULL);
+    lv_obj_set_size(cont_bpm, 75, 150);
+    lv_obj_align(cont_bpm, NULL, LV_ALIGN_IN_RIGHT_MID, 0, 0);
+    lv_cont_set_layout(cont_bpm, LV_LAYOUT_CENTER);
+
+    /** Images **/
+    img1 = lv_img_create(cont_bpm, NULL);
+    lv_img_set_src(img1, &COR1);
+    lv_obj_align(img1, NULL, LV_ALIGN_CENTER, 0, 0);
+
+    /* create label */
+    label_hr = lv_label_create(cont_bpm, NULL);
+    lv_style_init(&style);
+    lv_style_set_text_font(&style, LV_STATE_DEFAULT, &lv_font_montserrat_40);
+    // lv_style_set_bg_color(&style, LV_STATE_DEFAULT, LV_COLOR_YELLOW);
+    // lv_style_set_(&style, LV_STATE_DEFAULT, LV_COLOR_YELLOW);;
+    lv_style_set_text_color(&style, LV_STATE_DEFAULT, LV_COLOR_RED);
+    // lv_style_set_text_color(&style, LV_STATE_DEFAULT, LV_COLOR_BLUE);
+
+    lv_obj_add_style(label_hr, LV_OBJ_PART_MAIN, &style);
+    // lv_obj_align(label_hr, NULL, LV_ALIGN_IN_TOP_MID, 0, 0);
+    static lv_style_t style1; /*Declare a new style. Should be static`*/
+    lv_obj_set_size(label_hr, 100, 70);
+
+    lv_obj_t *label = lv_label_create(cont_bpm, NULL);
+    // lv_obj_align(label, NULL, LV_ALIGN_IN_BOTTOM_MID, 0, 0);
+    lv_label_set_text(label, "BPM");
+    // lv_obj_set_height(label, 100);
+
+    // lv_label_set_align(label_hr, LV_LABEL_ALIGN_LEFT); /*Center aligned lines*/
+
+    // // LV_IMG_DECLARE(logo2_bmp);
+    // // LV_IMG_DECLARE(logo3_bmp);
 }
 
 void lv_setup()
