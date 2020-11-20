@@ -38,6 +38,9 @@
 /* USER CODE BEGIN 0 */
 #include "usart.h"
 #include "lv.h"
+
+#define ref 25
+
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -53,12 +56,12 @@ extern TIM_HandleTypeDef htim2;
 */
 void NMI_Handler(void)
 {
-  /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
+	/* USER CODE BEGIN NonMaskableInt_IRQn 0 */
 
-  /* USER CODE END NonMaskableInt_IRQn 0 */
-  /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
+	/* USER CODE END NonMaskableInt_IRQn 0 */
+	/* USER CODE BEGIN NonMaskableInt_IRQn 1 */
 
-  /* USER CODE END NonMaskableInt_IRQn 1 */
+	/* USER CODE END NonMaskableInt_IRQn 1 */
 }
 
 /**
@@ -66,17 +69,17 @@ void NMI_Handler(void)
 */
 void HardFault_Handler(void)
 {
-  /* USER CODE BEGIN HardFault_IRQn 0 */
+	/* USER CODE BEGIN HardFault_IRQn 0 */
 
-  /* USER CODE END HardFault_IRQn 0 */
-  while (1)
-  {
-    /* USER CODE BEGIN W1_HardFault_IRQn 0 */
-    /* USER CODE END W1_HardFault_IRQn 0 */
-  }
-  /* USER CODE BEGIN HardFault_IRQn 1 */
+	/* USER CODE END HardFault_IRQn 0 */
+	while (1)
+	{
+		/* USER CODE BEGIN W1_HardFault_IRQn 0 */
+		/* USER CODE END W1_HardFault_IRQn 0 */
+	}
+	/* USER CODE BEGIN HardFault_IRQn 1 */
 
-  /* USER CODE END HardFault_IRQn 1 */
+	/* USER CODE END HardFault_IRQn 1 */
 }
 
 /**
@@ -84,17 +87,17 @@ void HardFault_Handler(void)
 */
 void MemManage_Handler(void)
 {
-  /* USER CODE BEGIN MemoryManagement_IRQn 0 */
+	/* USER CODE BEGIN MemoryManagement_IRQn 0 */
 
-  /* USER CODE END MemoryManagement_IRQn 0 */
-  while (1)
-  {
-    /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
-    /* USER CODE END W1_MemoryManagement_IRQn 0 */
-  }
-  /* USER CODE BEGIN MemoryManagement_IRQn 1 */
+	/* USER CODE END MemoryManagement_IRQn 0 */
+	while (1)
+	{
+		/* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
+		/* USER CODE END W1_MemoryManagement_IRQn 0 */
+	}
+	/* USER CODE BEGIN MemoryManagement_IRQn 1 */
 
-  /* USER CODE END MemoryManagement_IRQn 1 */
+	/* USER CODE END MemoryManagement_IRQn 1 */
 }
 
 /**
@@ -102,17 +105,17 @@ void MemManage_Handler(void)
 */
 void BusFault_Handler(void)
 {
-  /* USER CODE BEGIN BusFault_IRQn 0 */
+	/* USER CODE BEGIN BusFault_IRQn 0 */
 
-  /* USER CODE END BusFault_IRQn 0 */
-  while (1)
-  {
-    /* USER CODE BEGIN W1_BusFault_IRQn 0 */
-    /* USER CODE END W1_BusFault_IRQn 0 */
-  }
-  /* USER CODE BEGIN BusFault_IRQn 1 */
+	/* USER CODE END BusFault_IRQn 0 */
+	while (1)
+	{
+		/* USER CODE BEGIN W1_BusFault_IRQn 0 */
+		/* USER CODE END W1_BusFault_IRQn 0 */
+	}
+	/* USER CODE BEGIN BusFault_IRQn 1 */
 
-  /* USER CODE END BusFault_IRQn 1 */
+	/* USER CODE END BusFault_IRQn 1 */
 }
 
 /**
@@ -120,17 +123,17 @@ void BusFault_Handler(void)
 */
 void UsageFault_Handler(void)
 {
-  /* USER CODE BEGIN UsageFault_IRQn 0 */
+	/* USER CODE BEGIN UsageFault_IRQn 0 */
 
-  /* USER CODE END UsageFault_IRQn 0 */
-  while (1)
-  {
-    /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
-    /* USER CODE END W1_UsageFault_IRQn 0 */
-  }
-  /* USER CODE BEGIN UsageFault_IRQn 1 */
+	/* USER CODE END UsageFault_IRQn 0 */
+	while (1)
+	{
+		/* USER CODE BEGIN W1_UsageFault_IRQn 0 */
+		/* USER CODE END W1_UsageFault_IRQn 0 */
+	}
+	/* USER CODE BEGIN UsageFault_IRQn 1 */
 
-  /* USER CODE END UsageFault_IRQn 1 */
+	/* USER CODE END UsageFault_IRQn 1 */
 }
 
 /**
@@ -138,12 +141,12 @@ void UsageFault_Handler(void)
 */
 void SVC_Handler(void)
 {
-  /* USER CODE BEGIN SVCall_IRQn 0 */
+	/* USER CODE BEGIN SVCall_IRQn 0 */
 
-  /* USER CODE END SVCall_IRQn 0 */
-  /* USER CODE BEGIN SVCall_IRQn 1 */
+	/* USER CODE END SVCall_IRQn 0 */
+	/* USER CODE BEGIN SVCall_IRQn 1 */
 
-  /* USER CODE END SVCall_IRQn 1 */
+	/* USER CODE END SVCall_IRQn 1 */
 }
 
 /**
@@ -151,12 +154,12 @@ void SVC_Handler(void)
 */
 void DebugMon_Handler(void)
 {
-  /* USER CODE BEGIN DebugMonitor_IRQn 0 */
+	/* USER CODE BEGIN DebugMonitor_IRQn 0 */
 
-  /* USER CODE END DebugMonitor_IRQn 0 */
-  /* USER CODE BEGIN DebugMonitor_IRQn 1 */
+	/* USER CODE END DebugMonitor_IRQn 0 */
+	/* USER CODE BEGIN DebugMonitor_IRQn 1 */
 
-  /* USER CODE END DebugMonitor_IRQn 1 */
+	/* USER CODE END DebugMonitor_IRQn 1 */
 }
 
 /**
@@ -164,12 +167,12 @@ void DebugMon_Handler(void)
 */
 void PendSV_Handler(void)
 {
-  /* USER CODE BEGIN PendSV_IRQn 0 */
+	/* USER CODE BEGIN PendSV_IRQn 0 */
 
-  /* USER CODE END PendSV_IRQn 0 */
-  /* USER CODE BEGIN PendSV_IRQn 1 */
+	/* USER CODE END PendSV_IRQn 0 */
+	/* USER CODE BEGIN PendSV_IRQn 1 */
 
-  /* USER CODE END PendSV_IRQn 1 */
+	/* USER CODE END PendSV_IRQn 1 */
 }
 
 /**
@@ -177,14 +180,14 @@ void PendSV_Handler(void)
 */
 void SysTick_Handler(void)
 {
-  /* USER CODE BEGIN SysTick_IRQn 0 */
+	/* USER CODE BEGIN SysTick_IRQn 0 */
 
-  /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
-  HAL_SYSTICK_IRQHandler();
-  /* USER CODE BEGIN SysTick_IRQn 1 */
+	/* USER CODE END SysTick_IRQn 0 */
+	HAL_IncTick();
+	HAL_SYSTICK_IRQHandler();
+	/* USER CODE BEGIN SysTick_IRQn 1 */
 
-  /* USER CODE END SysTick_IRQn 1 */
+	/* USER CODE END SysTick_IRQn 1 */
 }
 
 /******************************************************************************/
@@ -197,64 +200,57 @@ void SysTick_Handler(void)
 /**
 * @brief This function handles ADC1 interrupt.
 */
+
 void ADC1_IRQHandler(void)
 {
-  /* USER CODE BEGIN ADC1_IRQn 0 */
+	/* USER CODE BEGIN ADC1_IRQn 0 */
 
-  static char flag = 1;
-  static char flag2 = 0;
-  static uint8_t contador_borda_subida = 0;
-  static uint32_t tempo_inicio = 0;
-  static uint32_t tempo_fim = 0;
+	static char flag = 1;
+	static char flag2 = 0;
+	static uint8_t contador_borda_subida = 0;
+	static uint32_t tempo_inicio = 0;
+	static uint32_t tempo_fim = 0;
 
-  uint32_t amostra = HAL_ADC_GetValue(&hadc1) / 100;
-  lv_chart_set_next(chart, ser1, amostra);
-  lv_chart_set_next(chart, ser2, 30);
+	uint32_t amostra = HAL_ADC_GetValue(&hadc1) / 100;
+	lv_chart_set_next(chart, ser1, amostra);
+#if DRAW_REF_LINE
+	lv_chart_set_next(chart, ser2, ref);
+#endif
+	lv_chart_refresh(chart);
 
-  lv_chart_refresh(chart);
+	if (amostra > ref && !flag)
+	{
+		flag = 1;
+		lv_img_set_src(heart_img, &COR2);
 
-  if (amostra > 30 && !flag)
-  {
-    flag = 1;
-    // flag2 ^= 0x01;
-    // if (flag2)
-      lv_img_set_src(img1, &COR2);
-    // else
-      // lv_img_set_src(img1, &COR1);
-    if (contador_borda_subida == 0)
-      tempo_inicio = HAL_GetTick();
-    if (contador_borda_subida == 1)
-      tempo_fim = HAL_GetTick();
-    contador_borda_subida++;
-  }
+		if (contador_borda_subida == 0)
+			tempo_inicio = HAL_GetTick();
+		if (contador_borda_subida == 1)
+			tempo_fim = HAL_GetTick();
+		contador_borda_subida++;
+	}
 
-  if (amostra < 30 && flag)
-  {
-    flag = 0;
-    lv_img_set_src(img1, &COR1);
-  }
+	if (amostra < ref && flag)
+	{
+		flag = 0;
+		lv_img_set_src(heart_img, &COR1);
+	}
 
-  if (contador_borda_subida > 1)
-  {
+	if (contador_borda_subida > 1)
+	{
 
-    contador_borda_subida = 0;
-    uint32_t periodo = tempo_fim - tempo_inicio;
-    // uint32_t periodo = (tempo_inicio - tempo_fim);
-    float frquencia = (1.0 / ((periodo))) * 1000.0;
-    uint32_t freq = frquencia * 60;
-    char tx[50];
-    size_t len;
-    // lv_label_set_text_fmt(label_hr, "HR %d bpm", freq);
-    lv_label_set_text_fmt(label_hr, "%d", freq);
-    // lv_label_set_text_fmt(label_hr, "%d", periodo);
-    len = sprintf(tx, "%d - %d = %d, %d bpm\n", tempo_inicio, tempo_fim, periodo, freq);
-    HAL_UART_Transmit(&huart1, (uint8_t *)tx, len, 1000);
-  }
+		contador_borda_subida = 0;
+		uint32_t periodo = tempo_fim - tempo_inicio;
+		float frquencia = (1.0 / ((periodo))) * 1000.0;
+		uint32_t freq = frquencia * 60;
 
-  HAL_ADC_IRQHandler(&hadc1);
-  /* USER CODE BEGIN ADC1_IRQn 1 */
+		lv_label_set_text_fmt(label_hr, "%d", freq);
+	}
 
-  /* USER CODE END ADC1_IRQn 1 */
+	HAL_ADC_IRQHandler(&hadc1);
+	/* USER CODE BEGIN ADC1_IRQn 1 */
+
+	/* USER CODE END ADC1_IRQn 1 */
 }
 
 /**
@@ -262,13 +258,13 @@ void ADC1_IRQHandler(void)
 */
 void TIM2_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM2_IRQn 0 */
-  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-  /* USER CODE END TIM2_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim2);
-  /* USER CODE BEGIN TIM2_IRQn 1 */
+	/* USER CODE BEGIN TIM2_IRQn 0 */
+	HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+	/* USER CODE END TIM2_IRQn 0 */
+	HAL_TIM_IRQHandler(&htim2);
+	/* USER CODE BEGIN TIM2_IRQn 1 */
 
-  /* USER CODE END TIM2_IRQn 1 */
+	/* USER CODE END TIM2_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
